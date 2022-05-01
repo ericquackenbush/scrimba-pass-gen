@@ -1,27 +1,21 @@
-const lowercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-const uppercase = "abcdefghijklmnopqrstuvwxyz"
-const digits = "0123456789"
-const alphabet = lowercase + uppercase + digits
+const lowercase = Array.from(Array(26)).map((e, i) => String.fromCharCode(i + "a".charCodeAt()))
+const uppercase = lowercase.map(e => e.toUpperCase())
+const digits = Array.from(Array(10)).map((e, i) => i)
+const alphabet = [...lowercase, ...uppercase, ...digits]
 
 const passwordLength = 10
 
-// generates a password from alphabet of a given length
+// generates a password of a given length from alphabet
 function generatePassword(length) {
-    let randChars = Array.from({length: length}, () => alphabet[Math.floor(Math.random() * alphabet.length)])
-    return randChars.join('')
+    let randCharArray = Array.from({length: length}, () => alphabet[Math.floor(Math.random() * alphabet.length)])
+    return randCharArray.join('')
 }
 
 // display four randomly generated passwords on the website
-function generatePasswords() {
+function displayPasswords() {
     // get the spans where the passwords will be displayed
-    firstPasswordElem = document.querySelector("#password1")
-    secondPasswordElem = document.querySelector("#password2")
-    thirdPasswordElem = document.querySelector("#password3")
-    fourthPasswordElem = document.querySelector("#password4")
+    passwordElems = document.querySelectorAll("#password-container span")
 
     // display the generated passwords
-    firstPasswordElem.textContent = generatePassword(passwordLength)
-    secondPasswordElem.textContent = generatePassword(passwordLength)
-    thirdPasswordElem.textContent = generatePassword(passwordLength)
-    fourthPasswordElem.textContent = generatePassword(passwordLength)
+    passwordElems.forEach(passwordElem => passwordElem.textContent = generatePassword(passwordLength))
 }
