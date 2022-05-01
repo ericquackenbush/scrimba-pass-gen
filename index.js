@@ -1,7 +1,8 @@
 const lowercase = Array.from(Array(26)).map((e, i) => String.fromCharCode(i + "a".charCodeAt()))
 const uppercase = lowercase.map(e => e.toUpperCase())
 const digits = Array.from(Array(10)).map((e, i) => i)
-const alphabet = [...lowercase, ...uppercase, ...digits]
+const specialChars = Array.from("!@#$%^&*")
+const alphabet = [...lowercase, ...uppercase, ...digits, ...specialChars]
 
 // generates a password of a given length from alphabet
 function generatePassword(length) {
