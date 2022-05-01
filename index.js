@@ -16,7 +16,6 @@ function displayPasswords() {
 
     // get the user-specified password length
     const passwordLengthInput = document.querySelector("#password-length")
-    console.log(passwordLengthInput.value)
 
     // display the generated passwords
     passwordElems.forEach(passwordElem => passwordElem.textContent = generatePassword(passwordLengthInput.value))
