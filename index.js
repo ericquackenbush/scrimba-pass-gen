@@ -12,11 +12,19 @@ function generatePassword(length) {
 // display four randomly generated passwords on the website
 function displayPasswords() {
     // get the spans where the passwords will be displayed
-    passwordElems = document.querySelectorAll("#password-container span")
+    passwordElems = document.querySelectorAll("#password-container input")
 
     // get the user-specified password length
-    const passwordLengthInput = document.querySelector("#password-length")
+    const passwordLengthInput = document.querySelector("#password-length-el")
 
     // display the generated passwords
-    passwordElems.forEach(passwordElem => passwordElem.textContent = generatePassword(passwordLengthInput.value))
+    passwordElems.forEach(passwordElem => passwordElem.value = generatePassword(passwordLengthInput.value))
+}
+
+function copyPassword(e) {
+    // write the password to the clipboard
+    navigator.clipboard.writeText(e.value)
+
+    // alert the user
+    alert("Copied password!")
 }

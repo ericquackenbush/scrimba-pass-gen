@@ -4,13 +4,14 @@
     </head>
     <body>
         <button type="button" onclick="displayPasswords()">Generate passwords</button>
-        <label for="password-length">Set Password Length</label>
-        <input type="number" id="password-length" min="1" max="24" value="10">
+        <label for="password-length-el">Set Password Length</label>
+        <input type="number" id="password-length-el" min="8" max="24" value="10">
+
         <div id="password-container">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <input class="password-entry" onclick="copyPassword(this)" type="text">
+            <input class="password-entry" onclick="copyPassword(this)" type="text">
+            <input class="password-entry" onclick="copyPassword(this)" type="text">
+            <input class="password-entry" onclick="copyPassword(this)" type="text">
         </div>
 
         <script src="index.js"></script>
