@@ -10,6 +10,10 @@ function generatePassword(length) {
     return randCharArray.join('')
 }
 
+// set the display of password-container to 'none'
+let passwordContainerElem = document.querySelector("#password-container")
+passwordContainerElem.style.display = "none"
+
 // display four randomly generated passwords on the website
 function displayPasswords() {
     // get the spans where the passwords will be displayed
@@ -20,6 +24,13 @@ function displayPasswords() {
 
     // display the generated passwords
     passwordElems.forEach(passwordElem => passwordElem.value = generatePassword(passwordLengthInput.value))
+
+    // set the display of password-container back to 'grid'
+    passwordContainerElem.style.display = "grid"
+
+    // set the display of shadow-password-container to 'none'
+    let shadowPasswordContainerElem = document.querySelector("#shadow-password-container")
+    shadowPasswordContainerElem.style.display = "none"
 }
 
 function copyPassword(e) {

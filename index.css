@@ -24,6 +24,18 @@ html, body {
     padding-bottom: 3px;
 }
 
+.shadow-password-entry {
+    display: block;
+    background-color: #273549;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 135.7px;
+    padding-right: 135.7px;
+}
+
 .btn {
     color: white;
     background-color: #10B981;
@@ -106,6 +118,14 @@ h2 {
 }
 
 #password-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 27px;
+    column-gap: 24px;
+}
+
+#shadow-password-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
